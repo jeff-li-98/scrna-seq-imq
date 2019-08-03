@@ -170,7 +170,7 @@ all.heatmap.10per
 
 
 # IMQ Only 
-#Combine IMQ Trials 
+# Combine IMQ Trials 
 imq.combined <- FindIntegrationAnchors(object.list = list(IMQ1, IMQ3, IMQ6), dims = 1:20)
 imq.combined <- IntegrateData(anchorset = imq.combined, dims = 1:20)
 imq.combined <- ScaleData(object = imq.combined, verbose = FALSE)
