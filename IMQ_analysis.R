@@ -31,42 +31,42 @@ library(reticulate)
 # Load in data using the Read10X function
 IMQ1.data <-Read10X(data.dir = paste0(data_dir, "m_IMQ_7d_1_IMQ1_mex"))
 IMQ1 <- CreateSeuratObject(counts =IMQ1.data, project = "1", min.cells = 3, min.features = 200)
-IMQ1@meta.data$replicate <- "IMQ1" # 1 Epcam Sort
+IMQ1@meta.data$replicate <- "IMQ1" 
 IMQ1 <- subset(x = IMQ1, subset = nFeature_RNA > 500)
 IMQ1 <- NormalizeData(object = IMQ1, verbose = FALSE)
 IMQ1 <- FindVariableFeatures(object = IMQ1, selection.method = "vst", nfeatures = 2000)
 
 IMQ3.data <-Read10X(data.dir = paste0(data_dir, "m_IMQ_7d_3_IMQ3_mex"))
 IMQ3 <- CreateSeuratObject(counts =IMQ3.data, project = "2", min.cells = 3, min.features = 200)
-IMQ3@meta.data$replicate <- "IMQ3" # 2 Epcam Sort
+IMQ3@meta.data$replicate <- "IMQ3" 
 IMQ3 <- subset(x = IMQ3, subset = nFeature_RNA > 500)
 IMQ3 <- NormalizeData(object = IMQ3, verbose = FALSE)
 IMQ3 <- FindVariableFeatures(object = IMQ3, selection.method = "vst", nfeatures = 2000)
 
 IMQ6.data <-Read10X(data.dir = paste0(data_dir, "m_IMQ_7d_6_IMQ6_mex"))
 IMQ6 <- CreateSeuratObject(counts =IMQ6.data, project = "3", min.cells = 3, min.features = 200)
-IMQ6@meta.data$replicate <- "IMQ6" # 3 Epcam Sort
+IMQ6@meta.data$replicate <- "IMQ6" 
 IMQ6 <- subset(x = IMQ6, subset = nFeature_RNA > 500)
 IMQ6 <- NormalizeData(object = IMQ6, verbose = FALSE)
 IMQ6 <- FindVariableFeatures(object = IMQ6, selection.method = "vst", nfeatures = 2000)
 
 VEH2.data <-Read10X(data.dir = paste0(data_dir, "m_VEH_7d_2_VEH2_mex"))
 VEH2 <- CreateSeuratObject(counts =VEH2.data, project = "4", min.cells = 3, min.features = 200)
-VEH2@meta.data$replicate <- "VEH2" # 4 Epcam Sort
+VEH2@meta.data$replicate <- "VEH2" 
 VEH2 <- subset(x = VEH2, subset = nFeature_RNA > 500)
 VEH2 <- NormalizeData(object = VEH2, verbose = FALSE)
 VEH2 <- FindVariableFeatures(object = VEH2, selection.method = "vst", nfeatures = 2000)
 
 VEH3.data <-Read10X(data.dir = paste0(data_dir, "m_VEH_7d_3_VEH3_mex"))
 VEH3 <- CreateSeuratObject(counts =VEH3.data, project = "5", min.cells = 3, min.features = 200)
-VEH3@meta.data$replicate <- "VEH3" # 5 Epcam Sort
+VEH3@meta.data$replicate <- "VEH3" 
 VEH3 <- subset(x = VEH3, subset = nFeature_RNA > 500)
 VEH3 <- NormalizeData(object = VEH3, verbose = FALSE)
 VEH3 <- FindVariableFeatures(object = VEH3, selection.method = "vst", nfeatures = 2000)
 
 VEH4.data <-Read10X(data.dir = paste0(data_dir, "m_VEH_7d_4_VEH4_mex"))
 VEH4 <- CreateSeuratObject(counts =VEH4.data, project = "6", min.cells = 3, min.features = 200)
-VEH4@meta.data$replicate <- "VEH4" # 6 Epcam Sort
+VEH4@meta.data$replicate <- "VEH4" 
 VEH4 <- subset(x = VEH4, subset = nFeature_RNA > 500)
 VEH4 <- NormalizeData(object = VEH4, verbose = FALSE)
 VEH4 <- FindVariableFeatures(object = VEH4, selection.method = "vst", nfeatures = 2000)
@@ -139,12 +139,9 @@ write.csv(top200_deg, "results/data/top10_deg_per_cluster.csv") # path is from c
 # Identify top 200 DEG across all clusters to plot 
 all.combined <- FindVariableFeatures(all.combined, selection.method = "vst", nfeatures = 2000)
 all_top200 <- head(VariableFeatures(all.combined), 200)
-# all_plot1 <- VariableFeaturePlot(all.combined)
-# all_plot2 <- LabelPoints(plot = all_plot1, points = all_top200, repel = TRUE)
-# pdf("combined_plot.pdf")
-# CombinePlots(plots = list(all_plot1, all_plot2))
-# dev.off()
-
+all_plot1 <- VariableFeaturePlot(all.combined)
+all_plot2 <- LabelPoints(plot = all_plot1, points = all_top200, repel = TRUE)
+CombinePlots(plots = list(all_plot1, all_plot2)) 
 
 ### Downsample the clusters to a maximum of 200 cells each (makes the heatmap easier to see for small clusters)
 all.small <- subset(all.combined, downsample = 200)
