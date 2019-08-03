@@ -169,7 +169,7 @@ all.heatmap.10per <- DoHeatmap(all.small, features = top200_deg$gene, angle = 90
 all.heatmap.10per
 
 
-#### IMQ Only 
+# IMQ Only 
 #Combine IMQ Trials 
 imq.combined <- FindIntegrationAnchors(object.list = list(IMQ1, IMQ3, IMQ6), dims = 1:20)
 imq.combined <- IntegrateData(anchorset = imq.combined, dims = 1:20)
