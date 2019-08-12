@@ -1,12 +1,12 @@
-# Shoo the Flu - School Absenteeism Evaluation
+# UCSF Cheng Lab Psoriasis Analysis 
 
 ## Overview
 
-Shoo the Flu (STF) is a school-based influenza vaccine delivery program for all K-5 elementary schools in the Oakland Unified School District (OUSD), beginning in 2014-15 and continuing through the 2017-18 school year. The Page Family Foundation, which funds STF, has also funded this independent evaluation. West Contra Costa Unified School District (WCCUSD) was identified using multivariate matching algorithms on school-level characteristics prior to this evaluation for use as a comparison. This analysis evaluated the impact of the program on school absence rates and influenza-related hospitalization.
+<Insert Project Description Here> 
 
 ## Objectives
 
-1. Measure the total effect of Shoo the Flu on all-cause and illness-specific absentee rates
+1. hi
 2. Measure the total effect and indirect effect of Shoo the Flu on laboratory-confirmed influenza
 3. Measure the total effect and indirect effect of Shoo the Flu on influenza-related hospitalization
 
