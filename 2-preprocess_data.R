@@ -72,7 +72,7 @@ all.combined <- RunUMAP(object = all.combined, reduction = "pca", dims = 1:20)
 all.combined <- RunTSNE(object = all.combined, reduction = "pca", dims = 1:20)
 all.combined <- FindNeighbors(object = all.combined, reduction = "pca", dims = 1:20)
 all.combined <- FindClusters(all.combined, resolution = 0.47) #20 clusters
-saveRDS(all.combined, file = paste0(cache_dir, "data_by_replicate.RDS"))
+saveRDS(all.combined, file = paste0(data_dir, "data_by_replicate.RDS"))
 
 ###### IMQ/VEH separated by condition
 
@@ -83,4 +83,4 @@ all.combined@meta.data = all.combined@meta.data %>% mutate(stim = case_when(stim
                                                                                  stim == "VEH2" ~ "VEH",
                                                                                  stim == "VEH3" ~ "VEH",
                                                                                  stim == "VEH4" ~ "VEH"))
-saveRDS(all.combined, file = paste0(cache_dir, "data_by_condition.RDS"))
+saveRDS(all.combined, file = paste0(data_dir, "data_by_condition.RDS"))

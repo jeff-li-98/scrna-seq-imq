@@ -41,8 +41,8 @@ source("config.R")
 #######################
 
 # Load the raw data
-readRDS(file = paste0(cache_dir, "data_by_replicate.RDS"))
-readRDS(file = paste0(cache_dir, "data_by_condition.RDS"))
+all.combined.replicate <- readRDS(file = paste0(data_dir, "data_by_replicate.RDS"))
+all.combined.condition <- readRDS(file = paste0(data_dir, "data_by_condition.RDS"))
 
 # Plot condition t-SNE vs cluster t-SNE
 all_p1 <- DimPlot(object = all.combined.condition, reduction = "tsne", group.by = "stim", pt.size = 0.003) 

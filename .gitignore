@@ -5,5 +5,5 @@
 *.DS_Store
 *.Rapp.history
 .Rproj.user
-data.zip
-data/*
+0-data/
+0-data.zip
