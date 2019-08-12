@@ -2,7 +2,7 @@
 
 ## Overview
 
-<Insert Project Description Here> 
+-- Insert Project Description Here -- 
 
 ## Objectives
 
