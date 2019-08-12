@@ -1,15 +1,23 @@
 #######################
 #  Config
 # ---------------------
-# Set up directories
-library(here)
+# Load packages
+library(BiocManager)
+library(Seurat)
+library(cowplot)
+library(dplyr)
+library(reticulate)
 
 # Define directories
 data_dir = here("data/")
-results_dir = here("results")
+data_dir_cwd = "data/"
+results_dir = here("1-results")
+results_dir_cwd = "1-results/"
 fig_dir = here(results_dir, "figures/")
+fig_dir_cwd = paste0(results_dir_cwd, "figures/")
 results_data_dir = here(results_dir, "data/")
-cache_dir = here("cache/")
+results_data_dir_cwd = paste0(results_dir_cwd, "data/")
+cache_dir = here("0-cache/")
 
 # Define project functions
 rbind_rnames <- function(datalist) {
