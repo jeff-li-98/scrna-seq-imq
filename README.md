@@ -12,6 +12,8 @@
 
 ## Project Structure
 
+https://berkeley.box.com/s/pvu598x3zkq40rwsn8pszg7bhcrduz2q
+
 At a high level, the project is hierarchical and uses prefix numbering to indicate how data "flows" through the project. Raw data import, management, and cleaning is handled by scripts in `0-data-prep/`, with intermediaries saved as R binaries. These intermediate binaries are then ingested by scripts in `1-power/` and `3-analysis/` to perform statistical computation, and the results are formatted and saved. The saved results are then ingested by scripts in `4-figures/` and `5-tables/` to complete the reproducible pipeline.
 
 For those attempting to replicate results with posession of the raw data, a utility bash script (`0-run-project.sh`) has been included. This calls other bash scripts throughout the project (which sometimes call more bash scripts), so it is recommended that you navigate the tree of calls to understand how the scripts are being used. You will likely need to respecify directory paths in the bash scripts and `0-config.R` to fit your specific file structure and needs.
