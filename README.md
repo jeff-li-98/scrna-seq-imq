@@ -26,7 +26,9 @@ Your repo is now set up!
 At a high level, the project is hierarchical and uses prefix numbering to indicate the workflow through the project. The files are divided as follows:
 
 `0-config.R`: File paths and packages are loaded in here. All analyses source this file in the pre-amble. 
+
 `1-install_packages.R`: All dependencies are installed here. All analyses include `source(1-install_packages.R)` in the pre-amble as a comment. When running this project for the first time, run this line to install packages. After the initial install, there is no need to run this again.
+
 `2-preprocess_data.R`: This script loads in the rnaseq data from the 10XGenomics formats `.mtx` (fill here) using `Read10X()` and creates Seurat objects. Integration anchors are found for the data and we run PCA, UMAP, and t-SNE in this script. We then find clusters and save this object as an RDS for use in other scripts. Two RDS files are generated from this script: `data_by_replicate.RDS` (grouping cells by replicate e.g. IMQ1, IMQ3, IMQ5) and `data_by_condition.RDS` (grouping cells by condition e.g. IMQ/VEH). 
 
 
