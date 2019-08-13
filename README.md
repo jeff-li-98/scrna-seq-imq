@@ -41,7 +41,9 @@ At a high level, the project is hierarchical and uses prefix numbering to indica
 
   - `4-visualization.R`: This script generates a UMAP and t-SNE plot for high-level visualization of clusters. 
 
-  - `5-results.R`: All figures and data generated from the analysis scripts are saved here.
+  - `5-cluster_replicate_cell_distribution.R`: Generates an excel sheet that tabulates the distribution of cells from each replicate, per cluster. 
+
+  - `6-results.R`: All figures and data generated from the analysis scripts are saved here.
 
 
 Created by [Jeffrey Li](https://github.com/jeff-li-98), [Nolan Pokpongkiat](https://github.com/nolanpokpongkiat).

@@ -2,11 +2,11 @@
 # scrna seq imq visualizations
 # deg analysis
 #
-# jeff li (jeffli@berkeley.edu)
+# jeff li (jeff.li@berkeley.edu)
 # nolan pokpongkiat (nolanpokpongkiat@berkeley.edu)
 #
 # 1) generate heatmap of DEG
-# 2) 
+# 
 #
 #
 # inputs:
@@ -25,16 +25,6 @@ source("0-config.R")
 # Load the processed data
 all.combined.replicate <- readRDS(file = paste0(data_dir, "data_by_replicate.RDS"))
 all.combined.condition <- readRDS(file = paste0(data_dir, "data_by_condition.RDS"))
-
-# # Plot UMAP by stim
-# all.combined$cellType <- Idents(all.combined)
-# Idents(all.combined) <- all.combined$stim
-# DimPlot(all.combined, reduction = "umap")
-# Idents(all.combined) <- all.combined@meta.data$seurat_clusters
-
-# # Tabulate number of cells in each cluster by stim
-# cluster_by_stim_breakdown <- table(all.combined@meta.data$seurat_clusters, all.combined@meta.data$stim) 
-# write.csv(cluster_by_stim_breakdown, "results/data/num_cells_per_cluster_by_stim.csv") # path is from cwd
 
 
 ####################### 

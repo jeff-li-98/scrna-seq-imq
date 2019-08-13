@@ -2,7 +2,7 @@
 # scrna seq imq
 # deg analysis
 #
-# jeff li (jeffli@berkeley.edu)
+# jeff li (jeff.li@berkeley.edu)
 # nolan pokpongkiat (nolanpokpongkiat@berkeley.edu)
 #
 # 1) generate heatmap of deg by cluster

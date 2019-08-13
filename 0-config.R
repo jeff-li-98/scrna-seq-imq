@@ -10,8 +10,8 @@ library(reticulate)
 
 # Define directories
 data_dir = here("0-data/")
-results_dir = here("1-results")
-results_dir_cwd = "1-results/"
+results_dir = here("6-results")
+results_dir_cwd = "6-results/"
 fig_dir = here(results_dir, "figures/")
 fig_dir_cwd = paste0(results_dir_cwd, "figures/")
 results_data_dir = here(results_dir, "data/")
