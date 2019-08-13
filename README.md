@@ -14,7 +14,7 @@ Most of the analysis can be easily cloned and run on your local computer, with t
 
 This should pull down all the analysis files onto your local computer. Then, fetch the data:
 
-1. Request access to the data from jeff.li@berkeley.edu.
+1. Request access to the data from jeff.li@berkeley.edu or nolanpokpongkiat@berkeley.edu.
 2. Download the `0-data.zip` file  [here](https://berkeley.box.com/s/pvu598x3zkq40rwsn8pszg7bhcrduz2q).
 3. Move the `0-data.zip` file to your repo (e.g. `imq-analysis/ucsf-cheng-psoriasis/`) and unzip the file.
 4. The zip can now be deleted.
