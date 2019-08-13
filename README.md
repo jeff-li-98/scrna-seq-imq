@@ -27,7 +27,7 @@ At a high level, the project is hierarchical and uses prefix numbering to indica
 
   - `0-config.R`: File paths and packages are loaded in here. All analyses source this file in the pre-amble. 
 
-  - `0-data.R`: Processed data is stored here.
+  - `0-data/`: Processed data is stored here.
 
   - `1-install-packages.R`: All dependencies are installed here. All analyses include `source(1-install_packages.R)` in the pre-amble as a comment. When running this project for the first time, run this line to install packages. After the initial install, there is no need to run this again.
 
@@ -46,7 +46,7 @@ At a high level, the project is hierarchical and uses prefix numbering to indica
 
   - `5-cluster-replicate-cell-distribution.R`: Generates an excel sheet that tabulates the distribution of cells from each replicate, per cluster. 
 
-  - `6-results.R`: All figures and data generated from the analysis scripts are saved here.
+  - `6-results/`: All figures and data generated from the analysis scripts are saved here.
 
 
 <br>
