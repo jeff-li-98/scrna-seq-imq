@@ -2,13 +2,17 @@
 
 ## Overview
 
--- Insert Project Description Here -- 
+This project attempts to explore differences in gene expression across various immune cell types affected in psoriasis, using imiquimod as a model.
 
-## Objectives
+## Setup
 
-1. hi
-2. Measure the total effect and indirect effect of Shoo the Flu on laboratory-confirmed influenza
-3. Measure the total effect and indirect effect of Shoo the Flu on influenza-related hospitalization
+Most of the analysis can be easily cloned and run on your local computer, with the exception of the `RunUMAP()` function in [2-preprocess_data.R](https://github.com/jeff-li-98/ucsf-cheng-psoriasis/blob/master/2-preprocess_data.R)., which requires setting up a Python environment within your RStudio. See below for details if you'd like to run this. Otherwise, the setup is relatively simple:
+
+1. Create a folder on your computer where you want this project to live. (e.g. `/imq-analysis`)
+2. Open a new terminal in that folder
+3. Clone this repo into that folder by entering this into terminal: `git clone https://github.com/jeff-li-98/ucsf-cheng-psoriasis`
+4. 
+
 
 ## Project Structure
 
