@@ -37,6 +37,7 @@ At a high level, the project is hierarchical and uses prefix numbering to indica
   
 
 &ensp;&ensp;&ensp;&ensp;1. All differentially expressed genes
+   
    2. Top 10 differentially expressed genes between IMQ v. VEH, per cluster
 3. Significantly differentially expressed genes (p < 0.05) between IMQ v. VEH, per cluster
 
