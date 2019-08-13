@@ -7,13 +7,22 @@
 #
 # load raw rnaseq data into R format and save for further analysis
 #
-# inputs: data/.
+# inputs: data/. (nonlocal)
 
 # outputs: 
 # "data_by_replicate.RDS"
 # "data_by_condition.RDS"
 ##########################################
 
+######################
+# # Set up an Anaconda environment
+# # IMPORTANT!!!! ONLY RUN THIS ONCE THE VERY FIRST TIME YOU OPEN THIS PROJECT
+# # IMPORTANT!!!! ONLY RUN THIS ONCE THE VERY FIRST TIME YOU OPEN THIS PROJECT
+# # IMPORTANT!!!! ONLY RUN THIS ONCE THE VERY FIRST TIME YOU OPEN THIS PROJECT
+# conda_create("r-reticulate")
+# conda_install("r-reticulate", "umap-learn")
+# py_config()
+#######################
 
 ###### IMQ/VEH separated by replicate
 

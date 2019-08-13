@@ -15,37 +15,14 @@
 
 # outputs: 
 
+# install packages:
+# source("install_packages.R")
 ##########################################
 
+# Setup
+source("0-config.R")
 
-#######################
-#  Setup
-# ---------------------
-# IMPORTANT!!!! ONLY RUN THIS ONCE THE VERY FIRST TIME YOU OPEN THIS PROJECT
-source("install_packages.R")
-#######################
-
-# Run these lines every time you open the project
-source("config.R")
-# Load packages
-library(here)
-library(BiocManager)
-library(Seurat)
-library(cowplot)
-library(dplyr)
-library(reticulate)
-
-######################
-# # Set up an Anaconda environment
-# # IMPORTANT!!!! ONLY RUN THIS ONCE THE VERY FIRST TIME YOU OPEN THIS PROJECT
-# # IMPORTANT!!!! ONLY RUN THIS ONCE THE VERY FIRST TIME YOU OPEN THIS PROJECT
-# # IMPORTANT!!!! ONLY RUN THIS ONCE THE VERY FIRST TIME YOU OPEN THIS PROJECT
-# conda_create("r-reticulate")
-# conda_install("r-reticulate", "umap-learn")
-# py_config()
-#######################
-
-# Load the raw data
+# Load the processed data
 all.combined.replicate <- readRDS(file = paste0(data_dir, "data_by_replicate.RDS"))
 all.combined.condition <- readRDS(file = paste0(data_dir, "data_by_condition.RDS"))
 
