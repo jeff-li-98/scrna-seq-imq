@@ -8,7 +8,7 @@
 
 1. hi
 2. Measure the total effect and indirect effect of Shoo the Flu on laboratory-confirmed influenza
-3. Measure the total effect and indirect effect of Shoo the Flu on influenza-related hospitalization
+3. Measure the total effect and indirect effect of Shoo the Flu on influenza-related hospitalizationfdfd
 
 ## Project Structure
 
