@@ -55,7 +55,7 @@ all.small <- ScaleData(all.small, features = rownames(all.small))
 # all.small@meta.data$integrated_snn_res.0.47 <- Idents(all.small)
 
 # ---------
-# Heatmap of all genes (accuracy needs verification)
+# Heatmap of all genes (check this -NP)
 # --------
 
 # Find all variable gene markers across all clusters
@@ -68,7 +68,7 @@ all.heatmap.alldeg <- DoHeatmap(all.small, features = unique(rna.markers$gene), 
 all.heatmap.alldeg # plot and save manually w/ size = 5000, 5000
 
 # ---------
-# Heatmap of top 200 intercluster DEG (accuracy needs verification)
+# Heatmap of top 200 intercluster DEG (check this -NP)
 # --------
 
 # Find the top 200 DEG across all clusters to plot 
@@ -79,7 +79,6 @@ all_top200 <- head(VariableFeatures(all.combined), 200)
 all.heatmap.degtop200 <- DoHeatmap(all.small, features = all_top200, angle = 90)
 all.heatmap.degtop200 # plot and save manually w/ size = 5000, 5000
 
-# # Plot of unknown use???
 # all_plot1 <- VariableFeaturePlot(all.combined)
 # all_plot2 <- LabelPoints(plot = all_plot1, points = all_top200, repel = TRUE)
 # CombinePlots(plots = list(all_plot1, all_plot2)) 
@@ -118,7 +117,7 @@ all.heatmap.10per <- DoHeatmap(all.small, features = top10_deg$gene, angle = 90,
 all.heatmap.10per
 
 # ---------
-# Heatmap of DEG p<0.05 from each cluster
+# Heatmap of significant DEG between IMQ v. VEH from each cluster
 # --------
 top10_deg <- readRDS(file = paste0(data_dir, "top10_deg_from_each_cluster.RDS"))
 degp_under05 <- top10_deg %>% filter(p_val_adj < 0.05) %>% group_by(cluster)
@@ -126,29 +125,4 @@ write.csv(degp_under05, paste0(results_data_dir_cwd, "degp_under05.csv")) # path
 hm_under05 <- DoHeatmap(all.small, features = degp_under05$gene, angle = 90, group.by = "seurat_clusters") + NoLegend()
 hm_under05
 
-# ---------
-# Heatmap of significant DEG between IMQ v. VEH from each cluster
-# --------
-
-# Identify significant DEG between IMQ v. VEH from each cluster
-# New col name "$cluster_$condition" (1_IMQ, 3_VEH...)
-all.combined.condition@meta.data$cluster_condition <- paste(all.combined.condition@meta.data$seurat_clusters, all.combined.condition@meta.data$stim, sep = "_")
-Idents(all.combined.condition) <- all.combined.condition@meta.data$cluster_condition
-
-all.combined.deg <- FindMarkers(all.combined.condition, ident.1 = "0_IMQ", ident.2 = "0_VEH", verbose = FALSE)
-top10_deg <- head(all.combined.deg, n = 10)
-top10_deg <- top10_deg %>% mutate(gene = rownames(top10_deg), cluster = 0)
-
-for (x in 1:20) {
-  top10_deg_per_cluster <- head(FindMarkers(all.combined.condition,
-                                            ident.1 = paste0(x, "_IMQ"), 
-                                            ident.2 = paste0(x, "_VEH"), 
-                                            verbose = FALSE), 
-                                n=10)
-  top10_deg_per_cluster <- top10_deg_per_cluster %>% 
-    mutate(gene = rownames(top10_deg_per_cluster), cluster = x)
-  top10_deg <- rbind(top10_deg, top10_deg_per_cluster)
-}
-write.csv(top10_deg, paste0(results_data_dir_cwd, "top10_deg_per_cluster.csv")) # path is from cwd
-saveRDS(top10_deg, file = paste0(data_dir, "top10_deg_from_each_cluster.RDS"))
 
