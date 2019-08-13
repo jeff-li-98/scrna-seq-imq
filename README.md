@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project attempts to explore differences in gene expression across various immune cell types affected in psoriasis, using imiquimod as a model.
+This project attempts to explore differences in gene expression across various immune cell types affected in psoriasis, using an imiquimod-induced model and Seurat.
 
 ## Setup
 
