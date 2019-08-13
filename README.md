@@ -11,18 +11,14 @@ Most of the analysis can be easily cloned and run on your local computer, with t
 1. Create a folder on your computer where you want this project to live. (e.g. `/imq-analysis`)
 2. Open a new terminal in that folder
 3. Clone this repo into that folder by entering this into terminal: `git clone https://github.com/jeff-li-98/ucsf-cheng-psoriasis`
-4. 
 
-<<<<<<< HEAD
-=======
-1. hi
-2. Measure the total effect and indirect effect of Shoo the Flu on laboratory-confirmed influenza
-3. Measure the total effect and indirect effect of Shoo the Flu on influenza-related hospitalizationfdfd
->>>>>>> 202a8ff74f74ce53c88ef2487742ee5a74a37e40
+This should pull down all the analysis files onto your local computer. Then, fetch the data:
+
+1. Request access to the data from jeff.li@berkeley.edu.
+2. Download the data [here]()
+
 
 ## Project Structure
-
-https://berkeley.box.com/s/pvu598x3zkq40rwsn8pszg7bhcrduz2q
 
 At a high level, the project is hierarchical and uses prefix numbering to indicate how data "flows" through the project. Raw data import, management, and cleaning is handled by scripts in `0-data-prep/`, with intermediaries saved as R binaries. These intermediate binaries are then ingested by scripts in `1-power/` and `3-analysis/` to perform statistical computation, and the results are formatted and saved. The saved results are then ingested by scripts in `4-figures/` and `5-tables/` to complete the reproducible pipeline.
 
@@ -41,3 +37,4 @@ optionally, identifier-stamped directory.
     - `filepaths` => filepaths required argument(s): The filepath(s) of the R scripts to be run
   - **Example Usage**: `./runFileSaveLogs -l ~/flu_logs -i run_two_scripts 0-data-prep/1-prep-cdph-fluseas.R 3-analysis/1-primary/5a-absentee-p2-glm-unadj.R`
     - (will run specified files and place logs in a directory formatted at `~/flu_logs/[current_time]-[current_user]-run_two_scripts`)
+
