@@ -13,8 +13,16 @@ Most of the analysis can be easily cloned and run on your local computer, with t
 3. Clone this repo into that folder by entering this into terminal: `git clone https://github.com/jeff-li-98/ucsf-cheng-psoriasis`
 4. 
 
+<<<<<<< HEAD
+=======
+1. hi
+2. Measure the total effect and indirect effect of Shoo the Flu on laboratory-confirmed influenza
+3. Measure the total effect and indirect effect of Shoo the Flu on influenza-related hospitalizationfdfd
+>>>>>>> 202a8ff74f74ce53c88ef2487742ee5a74a37e40
 
 ## Project Structure
+
+https://berkeley.box.com/s/pvu598x3zkq40rwsn8pszg7bhcrduz2q
 
 At a high level, the project is hierarchical and uses prefix numbering to indicate how data "flows" through the project. Raw data import, management, and cleaning is handled by scripts in `0-data-prep/`, with intermediaries saved as R binaries. These intermediate binaries are then ingested by scripts in `1-power/` and `3-analysis/` to perform statistical computation, and the results are formatted and saved. The saved results are then ingested by scripts in `4-figures/` and `5-tables/` to complete the reproducible pipeline.
 
