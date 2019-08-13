@@ -29,9 +29,9 @@ At a high level, the project is hierarchical and uses prefix numbering to indica
 
   - `0-data.R`: Processed data is stored here.
 
-  - `1-install_packages.R`: All dependencies are installed here. All analyses include `source(1-install_packages.R)` in the pre-amble as a comment. When running this project for the first time, run this line to install packages. After the initial install, there is no need to run this again.
+  - `1-install-packages.R`: All dependencies are installed here. All analyses include `source(1-install_packages.R)` in the pre-amble as a comment. When running this project for the first time, run this line to install packages. After the initial install, there is no need to run this again.
 
-  - `2-preprocess_data.R`: This script loads in the rnaseq data from the 10XGenomics formats `.mtx` (fill here) using `Read10X()` and creates Seurat objects. Integration anchors are found for the data and we run PCA, UMAP, and t-SNE in this script. We then find clusters and save this object as an RDS for use in other scripts. Two RDS files are generated from this script: `data_by_replicate.RDS` (grouping cells by replicate e.g. IMQ1, IMQ3, IMQ5) and `data_by_condition.RDS` (grouping cells by condition e.g. IMQ/VEH). 
+  - `2-preprocess-data.R`: This script loads in the rnaseq data from the 10XGenomics formats `.mtx` (fill here) using `Read10X()` and creates Seurat objects. Integration anchors are found for the data and we run PCA, UMAP, and t-SNE in this script. We then find clusters and save this object as an RDS for use in other scripts. Two RDS files are generated from this script: `data_by_replicate.RDS` (grouping cells by replicate e.g. IMQ1, IMQ3, IMQ5) and `data_by_condition.RDS` (grouping cells by condition e.g. IMQ/VEH). 
 
   - `3-heatmaps.R`: As stated, this script generates various heatmaps plotting genes on the y-axis and cells on the x-axis. We first downsample the data to 200 cells max per cluster, and plot three different heatmaps:
   
@@ -41,7 +41,7 @@ At a high level, the project is hierarchical and uses prefix numbering to indica
 
   - `4-visualization.R`: This script generates a UMAP and t-SNE plot for high-level visualization of clusters. 
 
-  - `5-cluster_replicate_cell_distribution.R`: Generates an excel sheet that tabulates the distribution of cells from each replicate, per cluster. 
+  - `5-cluster-replicate-cell-distribution.R`: Generates an excel sheet that tabulates the distribution of cells from each replicate, per cluster. 
 
   - `6-results.R`: All figures and data generated from the analysis scripts are saved here.
 

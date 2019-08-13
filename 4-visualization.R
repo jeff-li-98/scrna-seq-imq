@@ -17,7 +17,7 @@
 # "results/figures/UMAP_imq_veh.pdf"
 #
 # install packages:
-# source("install_packages.R")
+# source("1-install-packages.R")
 ##########################################
 
 # Setup
