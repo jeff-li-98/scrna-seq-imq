@@ -36,7 +36,7 @@ At a high level, the project is hierarchical and uses prefix numbering to indica
   - `3-heatmaps.R`: As stated, this script generates various heatmaps plotting genes on the y-axis and cells on the x-axis. We first downsample the data to 200 cells max per cluster, and plot three different heatmaps:
   
 
-&ensp;1. All differentially expressed genes
+&ensp;&ensp;&ensp;&ensp;1. All differentially expressed genes
 2. Top 10 differentially expressed genes between IMQ v. VEH, per cluster
 3. Significantly differentially expressed genes (p < 0.05) between IMQ v. VEH, per cluster
 
